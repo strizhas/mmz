@@ -1,0 +1,8 @@
+.DS_Store
+
+.idea
+.idea/*
+.idea/mmz.iml
+
+resources/
+resources/*

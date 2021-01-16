@@ -1,10 +1,36 @@
 window['run_scrips'] = function() {
 
     var that_search = "";
+    var controller = new ScrollMagic.Controller();
 
     if (window.location.toString().indexOf("?") > 0) {
         that_search = window.location.toString().substring(window.location.toString().indexOf("?"));
     };
+
+    (function () {
+        var chapters = document.getElementsByClassName('chapter')
+
+        for (var i=0; i < chapters.length; i++) {
+            var el_id = chapters[i].getAttribute('id')
+            var c_id  = parseInt(el_id.replace('chapter-', ''));
+
+            var scene = new ScrollMagic.Scene({
+                    triggerElement: '#' + el_id,
+                    duration: chapters[i].offsetHeight
+                })
+
+            scene.on('enter', function(event) {
+                var el_id = event.target.triggerElement().getAttribute('id')
+                var c_id  = el_id.replace('chapter-', '');
+
+                if (urls[c_id]) {
+                    var url = urls[c_id]['url'];
+                    history.pushState(url, null, url + that_search);
+                }
+            });
+            controller.addScene(scene)
+        }
+    })();
 
     (function () {
         var frame = document.getElementById('header-img-frame');

@@ -14,4 +14,20 @@
     <script src="https://storage.yandexcloud.net/hh-files/static/ScrollMagic.min.js"></script>
     <script src="https://storage.yandexcloud.net/hh-files/static/animation.gsap.min.js"></script>
     <script src="{{.Site.BaseURL}}history-page.js"></script>
+    <script>
+        var urls = {
+            0: {
+                "title": {{ .Params.title }},
+                "description": {{ .Params.description }},
+                "url": {{.Site.BaseURL}}
+            },
+            {{- range where .Site.Pages "Params.type" "static" -}}
+            {{.Params.order}}: {
+                "title": {{.Title}},
+                "description": {{.Params.description}},
+                "url": {{.Permalink}}
+            },
+            {{- end -}}
+        }
+    </script>
 </head>

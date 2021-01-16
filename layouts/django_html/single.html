@@ -3,6 +3,9 @@
 {% block head %}
     <meta name="description" content="{{ .Params.description }}"/>
     <link rel="stylesheet" href="{% static 'css/history-page.css' %}">
+    <script src="https://storage.yandexcloud.net/hh-files/static/gsap.min.js"></script>
+    <script src="https://storage.yandexcloud.net/hh-files/static/ScrollMagic.min.js"></script>
+    <script src="https://storage.yandexcloud.net/hh-files/static/animation.gsap.min.js"></script>
     <script src="{% static 'js/history-page.js' %}"></script>
     <script>
         function setScroll(s_id) {
@@ -31,8 +34,15 @@
                 }
             }
         }
-
-
+        var urls = {
+            {{- range where .Site.Pages "Params.type" "django_html" -}}
+            {{.Params.order}}: {
+                "title": {{.Title}},
+                "description": {{.Params.description}},
+                "url": {{.Params.django_url}}
+            },
+            {{- end -}}
+        }
     </script>
 {% endblock %}
 {% block title %}

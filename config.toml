@@ -1,6 +1,6 @@
 baseURL = ""
 languageCode = "ru"
-title = "Московский металлургический завод 'Серп и молот'. 130 лет истории - от пахотных земель до современного жилого квартала"
+title = "«Лефортовский треугольник» — история московского завода «Серп и молот»"
 assetDir = "assets"
 disableKinds = ["taxonomy", "taxonomyTerm", "category", "sitemap", "RSS", "404", "robotsTXT", "section"]
 

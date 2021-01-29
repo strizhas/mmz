@@ -25,11 +25,13 @@
     </section>
     {{- if eq .Page.Params.type "static" -}}
     <nav class="content-10-column article-pagination">
+        <a href='{{ ref . "chapter_6.md" }}' class="next-page" rel="next">Глава 6. Завод в годы перестройки</a>
         <a href='{{ ref . "chapter_4.md" }}' class="previous-page" rel="prev">Глава 4. Грандиозная реконструкция, знаковые символы эпохи и великая отечественная война</a>
     </nav>
     {{- end -}}
     {{- if eq .Page.Params.type "django_html" -}}
     <nav class="content-10-column article-pagination">
+        <a href="{% url 'mmz:zavod_v_godi_perestroiki' %}" class="next-page" rel="next">Глава 6. Завод в годы перестройки</a>
         <a href="{% url 'mmz:rekonstrukciya_zavoda' %}" class="previous-page" rel="prev">Глава 4. Грандиозная реконструкция, знаковые символы эпохи и великая отечественная война</a>
     </nav>
     {{- end -}}

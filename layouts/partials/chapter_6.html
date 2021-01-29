@@ -1,0 +1,33 @@
+{{ $data := getJSON "Data/СиМ-история.json" }}
+<article class="content-wrapper">
+    <section class="chapter" id="chapter-6">
+        {{ partial "components/chapter_header.html" (dict "num" 6 "year" "1990 – 2010" "text" (index $data.chapter_6 0).Title) }}
+        <div class="content-10-column">
+            <div class="text-section content-5-column">
+                <div class="paragraph-with-img">
+                    <p class="text-regular">{{ (index $data.chapter_6 0).Text | safeHTML }}</p>
+                    {{ partial "components/img_section.html" (dict "index" 12 "left" "true") }}
+                </div>
+                <p class="text-regular">{{ (index $data.chapter_6 1).Text | safeHTML }}</p>
+                <p class="text-regular">{{ (index $data.chapter_6 2).Text | safeHTML }}</p>
+
+                <p class="text-regular">{{ (index $data.chapter_6 3).Text | safeHTML }}</p>
+                <h2 class="longread-h2">{{ (index $data.chapter_6 4).Title | safeHTML }}</h2>
+                <div class="paragraph-with-img">
+                    <p class="text-regular">{{ (index $data.chapter_6 4).Text | safeHTML }}</p>
+                    {{ partial "components/img_section.html" (dict "index" 13 "left" "true") }}
+                </div>
+            </div>
+        </div>
+    </section>
+    {{- if eq .Page.Params.type "static" -}}
+    <nav class="content-10-column article-pagination">
+        <a href='{{ ref . "chapter_5.md" }}' class="previous-page" rel="prev">Глава 5. Послевоенные годы. Возвращение производства в мирное русло и новая реконструкция</a>
+    </nav>
+    {{- end -}}
+    {{- if eq .Page.Params.type "django_html" -}}
+    <nav class="content-10-column article-pagination">
+        <a href="{% url 'mmz:zavod_v_poslevoennie_godi' %}" class="previous-page" rel="prev">Глава 5. Послевоенные годы. Возвращение производства в мирное русло и новая реконструкция</a>
+    </nav>
+    {{- end -}}
+</article>

@@ -2,20 +2,24 @@
 <article>
     <section class="chapter" id="chapter-0">
         <header class="site-header" id="header-container">
+            <img class="header-cover-img-new" src="https://storage.yandexcloud.net/hh-files/history/photo/cover-slider/new/cover-3.jpg">
+            <!-- слайдер с фотографиями - старая версия обложки-->
+            <!--
             <div id="header-img-frame" class="header-img-frame">
                 <img src="https://storage.yandexcloud.net/hh-files/history/photo/cover-slider/shosse-entusiastov_auto_x2-2.jpg">
             </div>
+            -->
             <div class="text-section">
-                <h1><b>лефортовский треугольник</b><br>
+                <h1><b>&laquo;лефортовский треугольник&raquo;</b><br>
                 <small>1800 — 2020</small>
                 </h1>
                 <p>{{ (index $data.chapter_0 0).Intro | safeHTML }}</p>
-                <span class="arrow">↓</span>
+                <span id="header-arrow" class="arrow">↓</span>
             </div>
 
         </header>
         <div id="header-out-trigger"></div>
-        <div class="content-wrapper">
+        <div id="content-start" class="content-wrapper">
             <div class="content-10-column">
                 <div class="text-section content-5-column">
                     <p class="text-regular">{{ (index $data.chapter_0 0).Text | safeHTML }}</p>

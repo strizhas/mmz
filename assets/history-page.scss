@@ -220,6 +220,7 @@ b {
 .site-header {
     b {
         font-weight: normal;
+
     }
 
     .header-content {
@@ -227,6 +228,34 @@ b {
         width: 50%;
     }
 
+
+    .text-section {
+        position: relative;
+        padding: 2rem 2rem 2rem 0;
+        height: 100%;
+        margin-left: 50%;
+        width: 50%;
+        width: calc(50% - 4rem);
+    }
+
+    .arrow {
+        display: block;
+        font-size: 4rem;
+        cursor: pointer;
+    }
+
+    .header-cover-img-new {
+        position: absolute;
+        top: 10rem;
+        right: 50%;
+        right: calc(50% + 7rem);
+        width: 50%;
+        width: calc(50% - 10rem);
+        height: auto;
+    }
+    /*----- Слайдер с фотографиями ------- */
+    /*----- Возможно надо оставить -------- */
+    /*----- и использовать в другом месте ------- */
     .header-img-frame {
         background: #ddd;
         position: absolute;
@@ -242,44 +271,33 @@ b {
         height: 100%;
         height: calc(100% - 20rem);
         overflow: hidden;
-
     }
 
-    .text-section {
-        position: relative;
-        padding: 2rem 2rem 2rem 0;
-        height: 100%;
 
-        margin-left: 50%;
-        width: 50%;
-        width: calc(50% - 4rem);
+    .header-img-frame {
+        img {
+            min-width: 100%;
+            height: 100%;
+            width: auto;
+            position: absolute;
+            -webkit-transition-property: opacity;
+            -moz-transition-property: opacity;
+            -o-transition-property: opacity;
+            transition-property: opacity;
+            -webkit-transition-duration: 2s;
+            -moz-transition-duration: 2s;
+            -o-transition-duration: 2s;
+            transition-duration: 2s;
+        }
+
+        .img-hidden {
+            opacity: 0;
+        }
+        .img-visible {
+            opacity: 1;
+        }
     }
 
-    .header-img-frame img {
-        min-width: 100%;
-        height: 100%;
-        width: auto;
-        position: absolute;
-        -webkit-transition-property: opacity;
-        -moz-transition-property: opacity;
-        -o-transition-property: opacity;
-        transition-property: opacity;
-        -webkit-transition-duration: 2s;
-        -moz-transition-duration: 2s;
-        -o-transition-duration: 2s;
-        transition-duration: 2s;
-    }
-
-    .header-img-frame .img-hidden {
-        opacity: 0;
-    }
-    .header-img-frame .img-visible {
-        opacity: 1;
-    }
-    .arrow {
-        display: block;
-        font-size: 4rem;
-    }
 }
 
 
@@ -307,6 +325,7 @@ b {
         color: $ascent_red;
         display: block;
         max-width: 45rem;
+        margin: 1rem 0 0 0;
     }
 
     p {
@@ -530,33 +549,67 @@ b {
             position: relative;
             padding: 1rem;
             height: 100%;
-
             margin-left: 50%;
             width: 50%;
             width: calc(50% - 2rem);
         }
-
 
         .header-container {
             max-width: 120rem;
             margin: 0 auto;
             padding: 2rem;
         }
+
         h1 {
-            max-width: 60rem;
+            max-width: 100%;
             font-size: 2rem;
             padding-top: 3rem;
         }
+
         h1 b {
             font-size: 3rem;
         }
         h1 small {
             font-size: 2rem;
+            margin: 0.5rem 0 0 0;
         }
 
         p {
             font-size: 1.6rem;
             line-height: 2.5rem;
+        }
+
+        .header-img-frame {
+            width: 100%;
+            height: 50vh;
+            position: relative;
+            border: none;
+            outline: none;
+            top: 0;
+            margin: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .header-cover-img-new {
+            position: relative;
+            width: 100%;
+            top: 0.5rem;
+            left: 0;
+            width: calc(100% - 4rem);
+            margin-bottom: 1rem;
+        }
+        .header-content {
+            position: relative;
+            width: 50%;
+        }
+        .text-section {
+            position: relative;
+            padding: 2rem;
+            height: auto;
+            margin-left: 0;
+            width: 100%;
+            width: calc(100% - 4rem);
         }
 
     }
@@ -600,15 +653,8 @@ b {
     .quote-section {
         margin: 30px 0 50px 30px;
     }
-}
 
-@media screen and (max-width: 580px) {
-
-    html {
-        font-size: 2.2vw;
-    }
-
-    .content-5-column,
+        .content-5-column,
     .content-6-column,
     .chapter-header .chapter-header-top,
     .chapter-header .chapter-header-bottom {
@@ -636,47 +682,24 @@ b {
         margin-bottom: 5rem;
     }
 
+}
+
+@media screen and (max-width: 580px) {
+
+    html {
+        font-size: 2.2vw;
+    }
+
     .site-header {
         h1 {
-            max-width: 600px;
             font-size: 1.6rem;
             margin: 0;
             padding: 0 0 0.5rem 0;
         }
         h1 b {
-            text-transform: uppercase;
             font-size: 4rem;
         }
-
-        .header-content {
-            position: relative;
-            width: 50%;
-        }
-
-        .header-img-frame {
-            width: 100%;
-            height: 50vh;
-            position: relative;
-            border: none;
-            outline: none;
-            top: 0;
-            margin: 0;
-            left: 0;
-            overflow: hidden;
-
-        }
-
-        .text-section {
-            position: relative;
-            padding: 2rem;
-            height: auto;
-            margin-left: 0;
-            width: 100%;
-            width: calc(100% - 4rem);
-        }
-
     }
-
 
 }
 
@@ -703,15 +726,10 @@ b {
 
     .site-header {
         h1 {
-            max-width: 600px;
-            font-size: 14px;
+            font-size: 1.4rem;
         }
         h1 b {
-            text-transform: uppercase;
-            font-size: 32px;
-        }
-        h1 small {
-
+            font-size: 3.2rem;
         }
     }
 }
